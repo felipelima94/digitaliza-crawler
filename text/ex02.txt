@@ -1,0 +1,64 @@
+REVISAO DE LITERATURA: CITACOES E REFERENCIAS
+
+Citacdo é a mengcao, no texto, de informagao extraida de outra fonte. Referéncia é a identificagao
+completa de uma citagao.
+
+TIPOS DE CITACAO:
+
+a) citagdo direta: transcricdo fiel de parte da obra do autor consultado;
+
+b) citacao indireta: transcricdo adaptada de parte da obra do autor consultado;
+
+c) citagdo de citacdo: referéncia direta ou indireta de um texto sem acesso a0 original.
+
+CITAGAO DIRETA
+
+As citacdes diretas de até trés linhas devem estar contidas entre aspas duplas.
+
+Lere (1979, p. 58) entende que a “fixagdo de precos por margem simples que é técnica mais aplicada para
+determinar preco de venda, porém tem que obedecer a certas regras”.
+
+Nos caso do texto ter mais de trés linhas: Use recuo de 4cm, fonte 10, citagdo + pagina.
+
+“A fixagdo de precas por margem simples
+que é técnica mais aplicada para determinar
+preco de venda, porém tem que obedecer a
+certas regras”. (LERE, 1979, p.58)
+
+CITACAO INDIRETA
+
+As citacdes indiretas GO bres ho Nee a cet fus.
+
+- Lere (1979) entende que a fiag alter ace 2 eR Fo Ga Ban argarn simples € uma técnica que pode ser
+usada para determinar prego de vende
+
+- De acordo com Lere (1979) ando alteracdo de preges po: margem simples é uma técnica que pode ser
+usada para determinar preco de venda.
+
+- Ando alteracgdo de pregos por margem simples é uma tecnica que pode ser usada para determinar preco
+de venda (LERE, 1979).
+
+No caso de Multiplos Autores:
+
+(1) Segundo Lere (1979)... (2) Segundo Lere e Barbosa (1979)... (3) Segundo Lere, Barbosa e Aldo (1979)...
+(4 ou +) Segundo Lere et al. (1979)...
+
+CITACAO DA CITACAO
+
+Exemplo: Salamon (1999 apud Merege, 2005) relatou que...
+
+Nas REFERENCIAS é relacionada apenas a obra a qual se teve acesso:
+MEREGE, L.C. O terceiro setor. Sao Paulo: Editora Abril, 2005.
+
+Citacao e Referéncia da Internet
+
+De acordo com o Relatdrio de Analise Econémica do Bradesco (BRADESCO, 2008, p.6), os dados...
+
+BRADESCO. Relagdes com Investidores. Relatério de analise econdmica - IFRS. Jun. 2008. Disponivel em:
+<http://www.bradesco.com.br/relatorio.pdf>. Acesso em: 28 mar. 2017.
+
+Exemplo de citacSo de artigo de revista (padrao ABNT):
+NORMANN, R.; RAMIREZ, R. A importancia da qualidade. Revista Gest3o da Produgao, v.3, n.1, p.65-77, 2003.
+
+Exemplo de citacao de artigo de livro (padrao ABNT):
+LUCAS, M.E. Estratégia: a busca da vantagem competitiva. Rio de Janeiro: Campus, 2008.
