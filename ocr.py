@@ -10,6 +10,7 @@ import cv2
 import os
 # crud image
 from CrudImage import CrudImage
+from Crawler import Crawler
 
 # pytesseract.pytesseract.tesseract_cmd = "D:\\femax\\Desktop\\a\\pytesseract-master\\src"
 
@@ -64,9 +65,10 @@ cv2.imwrite(fileNameImage, image)
 os.remove(filename)
 # print(text)
 
-crud = CrudImage()
+# crud = CrudImage()
 filename = args["image"].split('/')[-1]
-getIndex = crud.insert(filename, text)
+# getIndex = crud.insert(filename, text)
+getIndex = Crawler().insetDocument(filename, text)
 print(getIndex)
 
 # show the output images

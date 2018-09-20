@@ -19,6 +19,8 @@ class Crawler:
             cursor.execute(sql, (word, ))
             conn.commit()
             result = cursor.lastrowid
+        else:
+            result = result[0]
 
         cursor.close()
         conn.close()
@@ -31,9 +33,9 @@ class Crawler:
         conn = Connection().conn()
         cursor = conn.cursor()
 
-        sql = "INSERT INTO localizacao_palavra (doc, palavra, posicao) VALUES (%s, %s, %s)"
-
+        sql = "INSERT INTO localizacao_palavra (id_doc, id_palavra, posicao) VALUES (%s, %s, %s)"
         cursor.execute(sql, (docId, wordId, position))
+        conn.commit()
 
         cursor.close()
         conn.close()
@@ -60,8 +62,9 @@ class Crawler:
             word = words[i]
             idWord = self.insertWord(word)
             self.inserLocationWord(docId, idWord, i)
-        return "Ok"
+        return docId
     
-result = Crawler().insetDocument("doc", "texto de exemplo para teste")
+# result = Crawler().insetDocument("doc", "texto de exemplo para teste")
+# result = Crawler().insertWord("show")
 
-print(result)
+# print(result)
