@@ -27,14 +27,14 @@ class Crud:
 
         return result
         
-    def findOne(self, table, id):
+    def findById(self, table, id):
         conn = Connection().conn()
         cursor = conn.cursor()
 
         sql = "Select * FROM {table} WHERE id =  {id}".format(table = table, id = id)
         cursor.execute(sql)
 
-        result = cursor.fetchall()
+        result = cursor.fetchone()
         
         cursor.close()
         conn.close()
