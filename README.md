@@ -1,23 +1,26 @@
 # API Python
 
-##Install OpenCV
-	> pip install opencv
-
 ##Intall tesseract
+#####On Ubuntu
 	> apt-get install tesseract-ocr-por
 
 ##Instalar pip
+#####pip3 On Ubuntu
 	> apt-get install python3-pip
 
-##opencv
+##Install OpenCV
 https://github.com/jazzsaxmafia/video_to_sequence/issues/3
-###	Ubuntu
+#####On Ubuntu
 	> apt-get install python-opencv
-	> pip install opencv-python
+#####Python
+	> pip3 install opencv-python
 
-##pip install pytesseract
-	> pip install pillow
+###Install Pytesseract
+	> pip3 install pytesseract
+	
+###Install Pillow
+	> pip3 install pillow
 
-##Install Nltk
-	> pip install nltk
+###Install Nltk
+	> pip3 install nltk
 	> python -m nltk.downloader all
