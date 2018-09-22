@@ -1,3 +1,6 @@
-.images/
-.text/
+text/
 .vscode/
+images/
+images/imagens-de-amizade-textos-de-amizade-3178e8.jpg
+__pycache__/
+*.pyc
