@@ -16,12 +16,11 @@ def main():
     if args["get"] == "all":
         images = Crud().getAll("tess")
     else:
-        images = Crud().findOne("tess", args["find"])
+        images = Crud().findById("tess", args["find"])
 
-    for x in images:
-        print("Id: {id}".format(id = x[0]))
-        print("File Name: {filename}".format(filename = x[1]))
-        print("Text: {text}".format(text = x[2]))
-        print("\n//  --  //  --------  //  --------   //  -------  // --  //\n")
+    print("Id: {id}".format(id = images[0]))
+    print("File Name: {filename}".format(filename = images[1]))
+    print("Text: {text}".format(text = images[2]))
+    print("\n//  --  //  --------  //  --------   //  -------  // --  //\n")
 
 main()
