@@ -5,12 +5,12 @@ from CrudImage import CrudImage
 
 class Crawler:
     def insertWord(self, word):
-        print(word)
+        # print(word)
         conn = Connection().conn()
         cursor = conn.cursor()
 
         sql = "Select id from palavras where palavra = '{word}'".format(word = word)
-        print("sql: ", sql)
+        # print("sql: ", sql)
         cursor.execute(sql)
         result = cursor.fetchone()
         
