@@ -85,6 +85,6 @@ class Search:
 
         return rows, wordIds
 
-result = Search().search('texto')
+result = Search().search('acredito')
 # result = Search().getDocument(19)[1]
 print("Result: ", result)

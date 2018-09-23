@@ -24,3 +24,6 @@ https://github.com/jazzsaxmafia/video_to_sequence/issues/3
 ###Install Nltk
 	> pip3 install nltk
 	> python -m nltk.downloader all
+
+###Install pyfpdf: FPDF for Python
+	> pip3 install fpdf
