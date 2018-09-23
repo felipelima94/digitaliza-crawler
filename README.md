@@ -27,3 +27,6 @@ https://github.com/jazzsaxmafia/video_to_sequence/issues/3
 
 ###Install pyfpdf: FPDF for Python
 	> pip3 install fpdf
+
+####Exemplo de uso
+	> python3 tess --image 'img1, ...' --name 'filename'
