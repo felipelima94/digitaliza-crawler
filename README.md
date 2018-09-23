@@ -19,21 +19,24 @@ https://github.com/jazzsaxmafia/video_to_sequence/issues/3
 	> pip3 install pytesseract
 	
 ###Install Pillow
-```python
 	> pip3 install pillow
-```
 
 ###Install Nltk
-```python
 	> pip3 install nltk
 	> python -m nltk.downloader all
-```
+
 ###Install pyfpdf: FPDF for Python
-```python
 	> pip3 install fpdf
-```
-####Exemple of use
-```python
+	
+##Exemple of use
 	> python3 tess --image 'img1, ...' --name 'filename'
-```
 Return `id` of file
+
+Command | Values
+--------|-------
+--image| list of address of images separated with `,` comma and between apostrophe
+|exemple `--image 'img-src1, img-src2, ...'`
+|
+--name | File name to be saved
+|
+Return | The return is the ID `(int)` of inserted file in database
