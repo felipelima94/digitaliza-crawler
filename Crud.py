@@ -40,6 +40,20 @@ class Crud:
         conn.close()
         return result
 
+    def findBy(self, table, colunm, value, condition="="):
+        conn = Connection().conn()
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM {table} WHERE {colunm} {condition} '{value}'".format(table = table, colunm = colunm, condition = condition, value = value)
+        # cursor.execute("SELECT * FROM %s WHERE %s %s %s", (table, colunm, condition, value))
+        cursor.execute(sql)
+
+        result = cursor.fetchall()
+
+        cursor.close()
+        conn.close()
+        return result
+
     def delete(self, table, id):
         conn = Connection().conn()
         cursor = conn.cursor()

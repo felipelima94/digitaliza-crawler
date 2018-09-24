@@ -85,6 +85,14 @@ class Search:
 
         return rows, wordIds
 
-result = Search().search('acredito')
+    def searchByDoc(self, word):
+        crud = Crud()
+
+        term = '%{word}%'.format(word = word)
+        docs = crud.findBy('tess', 'filename', term, 'LIKE')
+        return docs
+
+# result = Search().search('2017')
 # result = Search().getDocument(19)[1]
+result = Search().searchByDoc("documento")[0][0]
 print("Result: ", result)
