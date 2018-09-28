@@ -6,19 +6,32 @@ class Search:
     def search(self, phrase):
         rows, wordIds = self.searchManyWords(phrase)
 
-        # break point exception
-        if rows == -1:
-            return None
         # score = dict([row[0], 0] for row in rows)
         score = self.scoreCount(rows)
 
-        sortedScore = sorted([(score, doc) for (doc, score) in score.items()], reverse = 1)
-        for (score, doc) in sortedScore[0:10]:
-            print('%d\t[%s] %s' % (score, doc, self.getDocument(doc)[1]))
+        docFound = self.searchByDoc(phrase)
+
+        results = dict([doc[0], 1000000] for doc in docFound)
+        
+        if score and results:
+            results = self.merge_dicts(score, results)
+            
+        sortedScore = sorted([(score, doc) for (doc, score) in results.items()], reverse = 1)
+        for (score, doc) in sortedScore:
+            print('Score: %d\tID: [%s] %s' % (score, doc, self.getDocument(doc)[1]))
 
         return score
+    
+    def merge_dicts(self, x, y):
+        z = x.copy()   # start with x's keys and values
+        z.update(y)    # modifies z with y's keys and values & returns None
+        return z
 
     def scoreCount(self, rows):
+        # break point exception
+        if rows == -1:
+            return 
+
         score = dict([row[0], 0] for row in rows)
         for row in rows:
             score[row[0]] += 1
@@ -78,7 +91,6 @@ class Search:
         cursor.execute(fullSearch)
 
         rows = [row for row in cursor]
-        # result = cursor.fetchall()
 
         cursor.close()
         conn.close()
@@ -92,7 +104,7 @@ class Search:
         docs = crud.findBy('tess', 'filename', term, 'LIKE')
         return docs
 
-# result = Search().search('2017')
+result = Search().search('text')
 # result = Search().getDocument(19)[1]
-result = Search().searchByDoc("documento")[0][0]
+# result = Search().searchByDoc("doc")[0][1]
 print("Result: ", result)
