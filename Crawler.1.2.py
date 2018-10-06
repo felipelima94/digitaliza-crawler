@@ -4,6 +4,8 @@ import argparse
 from Connection import Connection
 
 ap = argparse.ArgumentParser()
+ap.add_argument("-e", "--empresaid", required=True,
+	help="file txt id")
 ap.add_argument("-t", "--txtid", required=True,
 	help="file txt id")
 ap.add_argument("-p", "--pdfid", required=True,
@@ -34,14 +36,14 @@ class Crawler:
 
         return result
 
-    def inserLocationWord(self, txtId, pdfId, wordId, position):
+    def inserLocationWord(self, empresaId, txtId, pdfId, wordId, position):
         conn = Connection().conn()
         cursor = conn.cursor()
 
-        sql = "INSERT INTO localizacao_palavra (id_doc, id_palavra, posicao) VALUES (%s, %s, %s)"
-        cursor.execute(sql, (txtId, wordId, position))
-        sql = "INSERT INTO localizacao_palavra (id_doc, id_palavra, posicao) VALUES (%s, %s, %s)"
-        cursor.execute(sql, (pdfId, wordId, position))
+        sql = "INSERT INTO localizacao_palavra (id_doc, id_empresa, id_palavra, posicao) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (txtId, empresaId, wordId, position))
+        sql = "INSERT INTO localizacao_palavra (id_doc, id_empresa, id_palavra, posicao) VALUES (%s, %s, %s, %s)"
+        cursor.execute(sql, (pdfId, empresaId, wordId, position))
         conn.commit()
 
         cursor.close()
@@ -59,15 +61,16 @@ class Crawler:
                     lista_palavras.append(stemmer.stem(p).lower())
         return lista_palavras
 
-    def execCrawler(self, txtId, pdfId, text):
+    def execCrawler(self, empresaId, txtId, pdfId, text):
         words = self.splitterWord(text)
 
         for i in range(len(words)):
             word = words[i]
             idWord = self.insertWord(word)
-            self.inserLocationWord(txtId, pdfId, idWord, i)
+            self.inserLocationWord(empresaId, txtId, pdfId, idWord, i)
         return txtId, pdfId
     
+empresaId = args['empresaid']
 txtId = args['txtid']
 pdfId = args['pdfid']
 fileText = args['file']
@@ -75,6 +78,6 @@ fileText = args['file']
 with open(fileText, 'r') as filelines:
     arqui = filelines.read()
 
-result = Crawler().execCrawler(txtId, pdfId, arqui)
+result = Crawler().execCrawler(empresaId, txtId, pdfId, arqui)
 
 print('Ok')

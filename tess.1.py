@@ -34,7 +34,7 @@ images = args['image'].split(",")
 text = str(datetime.datetime.now())+"\n"
 for src in images:
 	src = src.strip()
-	print(src)
+	# print(src)
 	if len(src) <= 1:
 		break
 
@@ -66,7 +66,7 @@ for src in images:
 	# load the image as a PIL/Pillow image, apply OCR, and then delete
 	# the temporary file
 	tempImage = Image.open(filename)
-	print(filename)
+	# print(filename)
 	text += pytesseract.image_to_string(tempImage)
 	#text = text.encode('utf-8')
 
