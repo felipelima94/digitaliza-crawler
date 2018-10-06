@@ -22,11 +22,14 @@ ap.add_argument("-n", "--name", required=True, default="text2",
 	help="name to save file")
 ap.add_argument("-i", "--image", required=True, default='images/documento-de-posio-oficial-2012-1-728.jpg, images/ex02.jpg',
 	help="path to input image to be OCR'd")
+ap.add_argument("-s", "--storage", type=str,
+	help="location where to move the files")
 ap.add_argument("-p", "--preprocess", type=str, default="thresh",
 	help="type of preprocessing to be done")
 args = vars(ap.parse_args())
 
 pdf = FPDF()
+storage = args['storage']
 images = args['image'].split(",")
 text = str(datetime.datetime.now())+"\n"
 for src in images:
@@ -55,7 +58,7 @@ for src in images:
 	# write the grayscale image to disk as a temporary file so we can
 	# apply OCR to it
 	# filename = "{address}/{name}.png".format(address = "./temp", name = os.getpid())
-	filename = "{address}/{name}.png".format(address = "./temp", name = (random.randint(0,5000)))
+	filename = "{address}/{name}.png".format(address = '/var/www/html/temp/', name = (random.randint(0,5000)))
 	cv2.imwrite(filename, gray)
 
 	newFileName = src.split('/')[-1].split('.')[0]
@@ -77,22 +80,22 @@ for src in images:
 	pdf.image(filename, x = 0, y = 0, w = 210)
 
 	# save image in folder images
-	fileNameImage = "{address}/{name}".format(address = "./images", name = src.split('/')[-1])
-	cv2.imwrite(fileNameImage, image)
+	# fileNameImage = "{address}/{name}".format(address = "./images", name = src.split('/')[-1])
+	# cv2.imwrite(fileNameImage, image)
 
 	os.remove(filename)
 
 	cv2.waitKey(0)
 
-pdfFileName = 'pdf/'+args["name"]+'.pdf'
+pdfFileName = storage+''+args["name"]+'.pdf'
 pdf.output(pdfFileName, 'F')
 
 # Create file txt
-arqui = open('./text/'+args["name"]+'.txt', 'w')
+arqui = open(storage+''+args["name"]+'.txt', 'w')
 arqui.write(text)
 arqui.close()
 
 # crud = CrudImage()
-filename = pdfFileName.split('/')[-1]
-getIndex = Crawler().insetDocument(filename, text)
-print(getIndex)
+# filename = pdfFileName.split('/')[-1]
+# getIndex = Crawler().insetDocument(filename, text)
+print('Ok')
