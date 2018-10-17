@@ -28,6 +28,9 @@ https://github.com/jazzsaxmafia/video_to_sequence/issues/3
 ###Install pyfpdf: FPDF for Python
 	> pip3 install fpdf
 	
+###Install MySql Driver: mysql-connector-python
+	> pip3 install mysql-connector-python
+	
 ##Exemple of use
 	> python3 tess --image 'img1, ...' --name 'filename'
 Return `id` of file
