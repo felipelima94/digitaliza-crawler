@@ -91,18 +91,20 @@ for src in images:
 filename = args["name"]
 counter = 1
 newFileName = filename
-while(os.path.exists(storage+''+newFileName)):
-	newFileName = filename+'('+counter+')'
+while(os.path.exists(storage+''+newFileName+'.pdf')):
+	newFileName = filename+"("+str(counter)+")"
 	counter += 1
 
 pdfFileName = storage+''+newFileName+'.pdf'
 pdf.output(pdfFileName, 'F')
 
 # Create file txt
+counter = 1
 newFileName = filename
-while(os.path.exists(storage+''+newFileName)):
-	newFileName = filename+'('+counter+')'
+while(os.path.exists(storage+''+newFileName+'.txt')):
+	newFileName = filename+"("+str(counter)+")"
 	counter += 1
+
 arqui = open(storage+''+newFileName+'.txt', 'w')
 arqui.write(text)
 arqui.close()
