@@ -11,6 +11,7 @@ import pytesseract
 import argparse
 import cv2
 import os
+import os.path
 # crud image
 from CrudImage import CrudImage
 from Crawler import Crawler
@@ -87,11 +88,22 @@ for src in images:
 
 	cv2.waitKey(0)
 
-pdfFileName = storage+''+args["name"]+'.pdf'
+filename = args["name"]
+counter = 1
+newFileName = filename
+while(os.path.exists(storage+''+newFileName)):
+	newFileName = filename+'('+counter+')'
+	counter += 1
+
+pdfFileName = storage+''+newFileName+'.pdf'
 pdf.output(pdfFileName, 'F')
 
 # Create file txt
-arqui = open(storage+''+args["name"]+'.txt', 'w')
+newFileName = filename
+while(os.path.exists(storage+''+newFileName)):
+	newFileName = filename+'('+counter+')'
+	counter += 1
+arqui = open(storage+''+newFileName+'.txt', 'w')
 arqui.write(text)
 arqui.close()
 
