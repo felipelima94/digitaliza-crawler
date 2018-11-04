@@ -42,8 +42,9 @@ class Crawler:
 
         sql = "INSERT INTO localizacao_palavra (id_doc, id_empresa, id_palavra, posicao) VALUES (%s, %s, %s, %s)"
         cursor.execute(sql, (txtId, empresaId, wordId, position))
-        sql = "INSERT INTO localizacao_palavra (id_doc, id_empresa, id_palavra, posicao) VALUES (%s, %s, %s, %s)"
-        cursor.execute(sql, (pdfId, empresaId, wordId, position))
+        if(pdfId != 0):
+            sql = "INSERT INTO localizacao_palavra (id_doc, id_empresa, id_palavra, posicao) VALUES (%s, %s, %s, %s)"
+            cursor.execute(sql, (pdfId, empresaId, wordId, position))
         conn.commit()
 
         cursor.close()
