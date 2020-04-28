@@ -1,4 +1,4 @@
-# API Python
+# Image digitizer
 
 ## Intall tesseract
 ##### On Ubuntu
