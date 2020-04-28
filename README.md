@@ -1,45 +1,43 @@
 # API Python
 
-##Intall tesseract
-#####On Ubuntu
+## Intall tesseract
+##### On Ubuntu
 	$ apt-get install tesseract-ocr-por
 
-##Instalar pip
-#####pip3 On Ubuntu
+## Instalar pip
+##### pip3 On Ubuntu
 	$ apt-get install python3-pip
 
-##Install OpenCV
+## Install OpenCV
 https://github.com/jazzsaxmafia/video_to_sequence/issues/3
-#####On Ubuntu
+##### On Ubuntu
 	$ apt-get install python-opencv
-#####Python
+##### Python
 	> pip3 install opencv-python
 
-###Install Pytesseract
+### Install Pytesseract
 	> pip3 install pytesseract
 	
-###Install Pillow
+### Install Pillow
 	> pip3 install pillow
 
-###Install Nltk
+### Install Nltk
 	> pip3 install nltk
 	> python -m nltk.downloader all
 
-###Install pyfpdf: FPDF for Python
+### Install pyfpdf: FPDF for Python
 	> pip3 install fpdf
 	
-###Install MySql Driver: mysql-connector-python
+### Install MySql Driver: mysql-connector-python
 	> pip3 install mysql-connector-python
 	
-##Exemple of use
+## Exemple of use
 	> python3 tess --image 'img1, ...' --name 'filename'
 Return `id` of file
 
 Command | Values
 --------|-------
---image| list of address of images separated with `,` comma and between apostrophe
-|exemple `--image 'img-src1, img-src2, ...'`
-|
---name | File name to be saved
-|
+`--image`| list of address of images separated with `,` comma and between apostrophe
+||exemple `--image 'img-src1, img-src2, ...'` 
+`--name` | File name to be saved 
 Return | The return is the ID `(int)` of inserted file in database
